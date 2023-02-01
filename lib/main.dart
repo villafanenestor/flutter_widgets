@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_2/widgets/MyCustomScaffold.dart';
+import 'package:flutter_application_2/widgets/MyListView.dart';
+import 'package:flutter_application_2/widgets/MySigleChilScrollView.dart';
 import 'package:flutter_application_2/widgets/container.dart';
+import 'package:flutter_application_2/widgets/safearea.dart';
+import 'package:flutter_application_2/widgets/stack.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +16,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MyCustomContainer());
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: MyListView(),
+    );
   }
 }
