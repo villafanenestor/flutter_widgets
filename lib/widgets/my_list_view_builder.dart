@@ -13,15 +13,25 @@ class MyListViewBuilder extends StatelessWidget {
         title: Text('ListView Builder Page'),
       ),
       body: SafeArea(
-          child: ListView(
-        children: List.generate(
-          10000000,
-          (index) => ListTile(
-            title: Text('ListLite #${index}'),
-            selectedTileColor: Colors.indigo,
+        child: Container(
+          child: ListView.builder(
+            itemBuilder: (_, index) {
+              return Column(
+                children: [
+                  ListTile(
+                    trailing:
+                        Icon(CupertinoIcons.antenna_radiowaves_left_right),
+                    title: Text('Index ${index + 1}'),
+                    iconColor: Colors.blue,
+                  ),
+                  Divider(),
+                ],
+              );
+            },
+            itemCount: 100,
           ),
         ),
-      )),
+      ),
     );
   }
 }
